@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100d19">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VICE CITY">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>VICE CITY — GTA VI Countdown</title>
+<style>
+:root{color-scheme:dark;--bg:#100d19;--panel:#1a1526;--line:#382741;--pink:#ff70c8;--cyan:#69e7e4;--muted:#b7a9bd}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#55294e 0,#20152c 35%,var(--bg) 75%);color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom)}
+.wrap{max-width:560px;margin:0 auto;padding:24px 0 36px}.top{display:flex;justify-content:space-between;align-items:center;color:#f5c5e7;font-size:10px;letter-spacing:2px;font-weight:800}.live{border:1px solid #7d4b78;border-radius:99px;padding:7px 10px;color:#ff9bda;letter-spacing:1px}
+.hero{margin-top:18px;border:1px solid #75466f;border-radius:26px;padding:22px 17px 18px;background:linear-gradient(150deg,#38203e 0%,#171321 55%,#3d1c38 100%);box-shadow:0 18px 55px #0008;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:230px;height:230px;border:1px solid #ff8ed533;border-radius:50%;right:-100px;top:20px;box-shadow:0 0 0 22px #ff8ed50a,0 0 0 48px #ff8ed508}
+.brand{text-align:center;padding:24px 0 20px;position:relative}.eyebrow{font-size:10px;letter-spacing:4px;color:#e9b8dc}.brand h1{font-size:clamp(42px,12vw,66px);line-height:.95;margin:10px 0 9px;font-weight:950;letter-spacing:-3px;text-shadow:0 0 24px #ff70c877}.brand p{font-size:10px;letter-spacing:4px;color:#e8b4d8;margin:0}
+.timerbox{position:relative;text-align:center;border:1px solid #ffffff27;background:#090811a8;border-radius:20px;padding:17px 10px 15px}.label{font-size:10px;letter-spacing:2.5px;color:var(--pink);font-weight:800}.days{font-size:clamp(55px,16vw,78px);font-weight:900;letter-spacing:-4px;line-height:1.1;margin-top:8px;font-variant-numeric:tabular-nums;text-shadow:0 0 22px #ff70c866}.daylabel{font-size:9px;letter-spacing:3px;color:#e7c5df}.units{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.unit{background:#ffffff0b;border:1px solid #ffffff20;border-radius:13px;padding:11px 4px}.num{font-size:27px;font-weight:850;font-variant-numeric:tabular-nums}.unit small{display:block;font-size:9px;letter-spacing:2px;color:#e7b9dc;margin-top:2px}
+.datefoot{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#e8c5df;margin-top:15px;letter-spacing:1px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.tab{background:#1a1526;border:1px solid var(--line);border-radius:13px;padding:12px 5px;color:#e6d8e9;font-size:12px;font-weight:750}.tab.active{background:var(--pink);color:#241126;border-color:var(--pink)}
+.page{display:none}.page.active{display:block}.card{background:linear-gradient(145deg,#211a2c,#171321);border:1px solid var(--line);border-radius:18px;padding:16px;margin:10px 0}.muted{color:var(--muted)}.kicker{font-size:10px;letter-spacing:2px;color:var(--pink);font-weight:800}.card h2{font-size:18px;margin:7px 0}.countline{font-size:clamp(21px,6vw,28px);font-weight:850;letter-spacing:-1px;font-variant-numeric:tabular-nums;margin-top:14px;overflow-wrap:anywhere}.bar{height:6px;border-radius:20px;background:#ffffff1c;overflow:hidden;margin-top:12px}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--cyan));width:0%}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#ffffff08;border:1px solid var(--line);border-radius:15px;padding:13px}.stat b{display:block;font-size:15px;margin-top:7px}.check{display:flex;align-items:center;gap:11px;padding:10px 0;font-size:13px;border-bottom:1px solid #ffffff12}.check:last-child{border:0}.check input{width:19px;height:19px;accent-color:var(--pink)}
+a{color:#ff9bda}.footer{text-align:center;color:#a995ad;font-size:10px;letter-spacing:1px;padding:22px 0 5px}.notice{font-size:11px;line-height:1.5;color:#c4b4c8}.badge{display:inline-block;border:1px solid #644461;border-radius:99px;padding:5px 8px;color:#f3b6dd;font-size:9px;letter-spacing:1px}
+@media(min-width:480px){.hero{padding:25px}.card{padding:19px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><span>ROCKSTAR COUNTDOWN PROJECT</span><span class="live">● LIVE</span></div>
+  <section class="hero">
+    <div class="brand"><div class="eyebrow">WELCOME TO</div><h1>VICE CITY</h1><p>THE WAIT IS ALMOST OVER</p></div>
+    <div class="timerbox">
+      <div class="label">TIME UNTIL GTA VI</div>
+      <div id="days" class="days">--</div><div class="daylabel">DAYS REMAINING</div>
+      <div class="units">
+        <div class="unit"><div id="hours" class="num">--</div><small>HOURS</small></div>
+        <div class="unit"><div id="minutes" class="num">--</div><small>MINUTES</small></div>
+        <div class="unit"><div id="seconds" class="num">--</div><small>SECONDS</small></div>
+      </div>
+    </div>
+    <div class="datefoot"><span>GRAND THEFT AUTO VI</span><span>19 NOV 2026</span></div>
+  </section>
+
+  <nav class="tabs" aria-label="App sections">
+    <button class="tab active" data-tab="overview">⌂ Overview</button>
+    <button class="tab" data-tab="preload">↓ Pre-load</button>
+    <button class="tab" data-tab="prep">✦ My setup</button>
+  </nav>
+
+  <section id="overview" class="page active">
+    <article class="card">
+      <div class="kicker">NEXT MILESTONE</div><h2>📥 Digital pre-load</h2>
+      <div class="muted" style="font-size:12px">10 November 2026 · 00:00 (your device's local time)</div>
+      <div class="countline" id="preloadShort">Calculating…</div>
+      <div class="notice" style="margin-top:9px">Pre-loading is available to eligible digital pre-orders. Check the official PlayStation instructions for your account and region.</div>
+    </article>
+    <div class="grid">
+      <div class="stat"><span class="muted" style="font-size:10px">PLATFORM</span><b>PlayStation 5</b></div>
+      <div class="stat"><span class="muted" style="font-size:10px">STORAGE TO RESERVE</span><b>At least 212 GB</b></div>
+    </div>
+    <article class="card">
+      <div class="kicker">THE COUNTDOWN JOURNEY</div>
+      <div class="muted" style="display:flex;justify-content:space-between;font-size:11px;margin-top:12px"><span>6 Nov 2026</span><span>Launch day</span></div>
+      <div class="bar"><span id="progress"></span></div>
+      <div id="percent" class="muted" style="font-size:11px;margin-top:8px">0% elapsed</div>
+    </article>
+  </section>
+
+  <section id="preload" class="page">
+    <article class="card">
+      <div class="kicker">MILESTONE 01</div><h2>PRE-LOAD DAY</h2>
+      <div class="muted" style="font-size:12px">10 November 2026 · Midnight local time</div>
+      <div class="countline" id="preloadFull">Calculating…</div>
+      <div class="bar"><span id="preprogress"></span></div>
+      <p class="notice">Official support currently lists digital pre-load from November 10 at midnight local time on PS5. Pre-order eligibility and availability may depend on your store region.</p>
+    </article>
+    <article class="card">
+      <div class="kicker">MILESTONE 02</div><h2>GAME UNLOCK</h2>
+      <div class="muted" style="font-size:12px">19 November 2026 · Midnight local time</div>
+      <div class="countline" id="launchFull">Calculating…</div>
+      <p class="notice">The exact unlock time can be region/store dependent. This timer uses midnight on November 19 in your device's current time zone.</p>
+    </article>
+  </section>
+
+  <section id="prep" class="page">
+    <article class="card">
+      <div class="kicker">YOUR GTA VI PREPARATION</div><h2>Ready for launch?</h2>
+      <p class="notice">Your checklist is saved on this device.</p>
+      <label class="check"><input type="checkbox" data-save="storage"> Reserve at least 212 GB of free space</label>
+      <label class="check"><input type="checkbox" data-save="order"> Confirm my pre-order and account region</label>
+      <label class="check"><input type="checkbox" data-save="network"> Check my internet connection</label>
+      <label class="check"><input type="checkbox" data-save="updates"> Enable automatic PS5 updates/downloads</label>
+      <label class="check"><input type="checkbox" data-save="controller"> Charge my controller</label>
+    </article>
+    <article class="card">
+      <div class="kicker">GAME INFORMATION</div>
+      <div class="grid" style="margin-top:12px">
+        <div class="stat"><span class="muted" style="font-size:10px">RELEASE</span><b>19 Nov 2026</b></div>
+        <div class="stat"><span class="muted" style="font-size:10px">PRE-LOAD</span><b>10 Nov 2026</b></div>
+        <div class="stat"><span class="muted" style="font-size:10px">CONSOLE</span><b>PS5 / PS5 Pro</b></div>
+        <div class="stat"><span class="muted" style="font-size:10px">SPACE</span><b>212 GB minimum</b></div>
+      </div>
+      <p class="notice" style="margin-top:13px">Dates and storage are based on currently published official information and may change.</p>
+      <p style="font-size:13px;margin-top:14px"><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">Rockstar Games — GTA VI ↗</a></p>
+      <p style="font-size:13px;margin-top:10px"><a href="https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions" target="_blank" rel="noopener">Rockstar support — pre-load details ↗</a></p>
+      <p style="font-size:13px;margin-top:10px"><a href="https://www.playstation.com/en-us/games/grand-theft-auto-vi/" target="_blank" rel="noopener">PlayStation — GTA VI ↗</a></p>
+    </article>
+  </section>
+  <footer class="footer">VICE CITY · COUNTING DOWN TO NOVEMBER 19<br><span class="badge" style="margin-top:10px">LIVE TIMER · LOCAL DEVICE TIME</span></footer>
+</main>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  // Uses the phone's local timezone, so the dates follow the device's region.
+  const preload = new Date(2026, 10, 10, 0, 0, 0);
+  const launch = new Date(2026, 10, 19, 0, 0, 0);
+  const journeyStart = new Date(2026, 10, 6, 0, 0, 0);
+  const pad = n => String(n).padStart(2, '0');
+  function format(ms) {
+    if (ms <= 0) return '00d · 00h · 00m · 00s';
+    let s = Math.floor(ms / 1000);
+    const d = Math.floor(s / 86400); s %= 86400;
+    const h = Math.floor(s / 3600); s %= 3600;
+    const m = Math.floor(s / 60); s %= 60;
+    return `${d}d · ${pad(h)}h · ${pad(m)}m · ${pad(s)}s`;
+  }
+  function update() {
+    const now = new Date();
+    let ms = Math.max(0, launch - now);
+    let s = Math.floor(ms / 1000), d = Math.floor(s / 86400); s %= 86400;
+    const h = Math.floor(s / 3600); s %= 3600;
+    const m = Math.floor(s / 60); s %= 60;
+    $('days').textContent = pad(d);
+    $('hours').textContent = pad(h);
+    $('minutes').textContent = pad(m);
+    $('seconds').textContent = pad(s);
+    $('preloadShort').textContent = format(preload - now);
+    $('preloadFull').textContent = format(preload - now);
+    $('launchFull').textContent = format(launch - now);
+    const pct = Math.max(0, Math.min(100, ((now - journeyStart) / (launch - journeyStart)) * 100));
+    $('progress').style.width = pct + '%';
+    $('percent').textContent = pct.toFixed(1) + '% of the countdown elapsed';
+    const pp = Math.max(0, Math.min(100, ((now - journeyStart) / (preload - journeyStart)) * 100));
+    $('preprogress').style.width = pp + '%';
+  }
+  document.querySelectorAll('[data-tab]').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === btn.dataset.tab));
+  }));
+  document.querySelectorAll('[data-save]').forEach(box => {
+    const key = 'vice-city-check-' + box.dataset.save;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', () => localStorage.setItem(key, box.checked ? '1' : '0'));
+  });
+  update(); setInterval(update, 1000);
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+  }
+})();
+</script>
+</body>
+</html>
