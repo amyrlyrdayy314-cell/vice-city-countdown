@@ -1,64 +1,164 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#10121b"><meta name="description" content="VICE CITY — an independent GTA VI countdown and fan experience.">
-<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png">
-<title>VICE CITY — Leonida is calling</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#100d19">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VICE CITY">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>VICE CITY — GTA VI Countdown</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
-:root{--bg:#0b0e16;--panel:#121725;--line:#ffffff18;--muted:#9aa5b8;--pink:#ff5d9e;--cyan:#55d9e8;--gold:#f4c879;--white:#f6f5f2}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
-header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,76px);border-bottom:1px solid var(--line);position:relative;z-index:8;background:#0b0e16e8;backdrop-filter:blur(16px)}.brand{font:900 25px 'Barlow Condensed';letter-spacing:3px}.brand span{color:var(--pink)}nav{display:flex;gap:26px;color:#c5c9d2;font-size:12px;text-transform:uppercase;letter-spacing:1.4px}nav a:hover{color:var(--cyan)}.live{font-size:10px;letter-spacing:2px;color:var(--cyan);display:flex;align-items:center;gap:8px}.live:before{content:'';width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
-.hero{min-height:690px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:90px clamp(22px,8vw,120px) 78px;background:linear-gradient(90deg,#090d18 0%,#090d18d9 35%,#090d1840 75%),linear-gradient(0deg,#0b0e16 0%,transparent 55%),url('https://www.rockstargames.com/VI/_next/static/media/Vice_City_11.09paum3g942sc.jpg?akim=1&imdensity=1&imwidth=1920') center/cover}
-.hero:after{content:'VICE CITY';position:absolute;right:-2vw;top:7%;font:900 clamp(90px,19vw,260px)/.8 'Barlow Condensed';letter-spacing:-8px;color:#ffffff0b;white-space:nowrap}.hero-content{max-width:660px;position:relative;z-index:1}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:3px;text-transform:uppercase}.hero h1{font:900 clamp(58px,10vw,126px)/.82 'Barlow Condensed';letter-spacing:-2px;margin:20px 0}.hero h1 em{font-style:normal;color:var(--pink)}.hero p{max-width:460px;color:#c0c6d2;line-height:1.8;font-size:14px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid var(--line);padding:14px 20px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;background:#ffffff0a;transition:.2s}.btn.primary{background:var(--pink);border-color:var(--pink);color:#10121b;font-weight:700}.btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
-.count-wrap{padding:0 clamp(18px,6vw,90px);margin-top:-1px;position:relative;z-index:2}.count-card{background:linear-gradient(120deg,#171e2d,#111725);border:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:28px clamp(20px,4vw,48px)}.count-title{font:700 25px 'Barlow Condensed';letter-spacing:1px}.count-sub{font-size:10px;color:var(--muted);letter-spacing:2px;margin-top:6px}.timer{display:flex;gap:clamp(9px,2.5vw,28px)}.unit{text-align:center;min-width:45px}.num{font:800 clamp(30px,5vw,52px)/1 'Barlow Condensed';color:var(--white)}.label{font-size:9px;letter-spacing:1.5px;color:var(--muted);margin-top:7px}
-section{padding:90px clamp(20px,7vw,100px)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}.kicker{font-size:10px;color:var(--pink);letter-spacing:2.5px;text-transform:uppercase}.section-head h2{font:800 clamp(38px,6vw,65px)/.95 'Barlow Condensed';margin:9px 0 0;text-transform:uppercase}.section-head p{font-size:12px;color:var(--muted);max-width:320px;line-height:1.7}
-.gallery{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:190px 190px;gap:12px}.shot{position:relative;overflow:hidden;background:linear-gradient(135deg,#202d43,#17202e);border:1px solid var(--line);min-height:150px}.shot:first-child{grid-row:span 2}.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}.shot:hover img{transform:scale(1.06)}.shot:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#090d16d9)}.shot span{position:absolute;bottom:16px;left:17px;z-index:1;font:700 22px 'Barlow Condensed';letter-spacing:1px}.shot .tag{font:10px 'DM Sans';color:var(--cyan);display:block;margin-bottom:4px;letter-spacing:2px}.placeholder{height:100%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 70% 30%,#e75e9a66,transparent 35%),linear-gradient(135deg,#1c3245,#17202e 60%,#563a58);font:800 44px 'Barlow Condensed';color:#ffffff35;letter-spacing:4px}
-.map-panel{display:grid;grid-template-columns:1fr .8fr;gap:24px;align-items:stretch}.map-art{min-height:360px;background:#111b25;border:1px solid var(--line);position:relative;overflow:hidden;padding:20px}.map-art svg{width:100%;height:100%;min-height:320px}.map-info{background:var(--panel);border:1px solid var(--line);padding:28px}.map-info h3{font:700 30px 'Barlow Condensed';margin:0 0 10px}.map-info p{color:var(--muted);font-size:13px;line-height:1.8}.location-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}.loc{padding:12px;border:1px solid var(--line);font-size:11px;color:#dce1e8;background:#ffffff04}.loc:before{content:'+';color:var(--pink);margin-right:8px}
-.vehicle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.vehicle{border:1px solid var(--line);background:var(--panel);overflow:hidden}.car-art{height:165px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 75%,#ff5d9e36,transparent 55%),linear-gradient(145deg,#202b3c,#111723)}.car-art svg{width:90%;max-height:145px}.vehicle-info{padding:17px}.vehicle-info small{color:var(--cyan);letter-spacing:2px;font-size:9px}.vehicle-info h3{font:700 23px 'Barlow Condensed';margin:7px 0}
-.news-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px}.news{background:var(--panel);border:1px solid var(--line);padding:23px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}.news time{font-size:10px;color:var(--cyan);letter-spacing:1.5px}.news h3{font:700 24px/1.1 'Barlow Condensed';margin:18px 0 8px}.news p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}.news a{font-size:10px;color:var(--pink);letter-spacing:1px;margin-top:20px}
-.soundbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 25px;background:linear-gradient(100deg,#182638,#211b2b);border:1px solid var(--line)}.soundbar h3{font:700 22px 'Barlow Condensed';margin:0}.soundbar p{font-size:11px;color:var(--muted);margin:5px 0 0}.switch{border:1px solid var(--cyan);background:transparent;color:var(--cyan);padding:12px 18px;font-size:10px;letter-spacing:1.5px}.sound-note{font-size:10px;color:var(--muted);margin-top:12px}
-footer{padding:30px clamp(20px,7vw,100px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:10px;letter-spacing:1px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#202b3b;border:1px solid var(--cyan);padding:12px 18px;font-size:12px;z-index:20;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:760px){header{height:62px}nav{gap:13px;font-size:9px}nav a:nth-child(3),nav a:nth-child(4){display:none}.live{font-size:8px}.hero{min-height:590px;padding-bottom:55px;background-position:58% center}.count-card{grid-template-columns:1fr}.timer{justify-content:space-between}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 145px 145px}.shot:first-child{grid-column:span 2;grid-row:auto}.map-panel{grid-template-columns:1fr}.map-art{min-height:280px}.vehicle-grid,.news-grid{grid-template-columns:1fr 1fr}.vehicle:last-child,.news:last-child{display:none}.section-head{align-items:start;flex-direction:column}.section-head p{margin:0}.soundbar{align-items:flex-start;flex-direction:column}footer{flex-direction:column}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-</style></head>
-<body><div class="noise"></div>
-<header><a class="brand" href="#">VICE<span>CITY</span></a><nav><a href="#gallery">Gallery</a><a href="#map">Leonida</a><a href="#cars">Vehicles</a><a href="#news">Newswire</a></nav><div class="live">FAN PROJECT / 2026</div></header>
-<main>
-<section class="hero"><div class="hero-content"><div class="eyebrow">Rockstar's next destination · Leonida, USA</div><h1>WELCOME TO<br><em>VICE CITY.</em></h1><p>A sun-soaked world with a darker side. Explore the places, vehicles and official media revealed for Grand Theft Auto VI.</p><div class="actions"><a class="btn primary" href="#gallery">Explore the gallery</a><a class="btn" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">Official game site ↗</a></div></div></section>
-<div class="count-wrap"><div class="count-card"><div><div class="count-title">THE COUNTDOWN TO LEONIDA</div><div class="count-sub">GLOBAL RELEASE · NOVEMBER 19, 2026</div></div><div class="timer" id="timer"><div class="unit"><div class="num" id="days">--</div><div class="label">DAYS</div></div><div class="unit"><div class="num" id="hours">--</div><div class="label">HOURS</div></div><div class="unit"><div class="num" id="mins">--</div><div class="label">MINUTES</div></div><div class="unit"><div class="num" id="secs">--</div><div class="label">SECONDS</div></div></div></div></div>
-<section id="gallery"><div class="section-head"><div><div class="kicker">01 / Visual archive</div><h2>Scenes from Leonida</h2></div><p>Official Rockstar imagery. Select the archive to explore the full collection.</p></div>
-<div class="gallery">
-<a class="shot" href="https://www.rockstargames.com/VI/launch-gallery" target="_blank" rel="noopener"><img src="https://www.rockstargames.com/VI/_next/static/media/Vice_City_11.09paum3g942sc.jpg?akim=1&imdensity=1&imwidth=1400" alt="Official Vice City screenshot" loading="lazy"><span><i class="tag">ROCKSTAR SCREENSHOT</i>VICE CITY AT NIGHT</span></a>
-<a class="shot" href="https://www.rockstargames.com/VI/media" target="_blank" rel="noopener"><div class="placeholder">LEONIDA</div><span><i class="tag">MEDIA ARCHIVE</i>BEYOND THE CITY</span></a>
-<a class="shot" href="https://www.rockstargames.com/VI/media" target="_blank" rel="noopener"><div class="placeholder">COASTLINE</div><span><i class="tag">OFFICIAL MEDIA</i>THE KEYS</span></a>
-<a class="shot" href="https://www.rockstargames.com/VI/launch-gallery" target="_blank" rel="noopener"><div class="placeholder">NIGHTLIFE</div><span><i class="tag">LAUNCH GALLERY</i>AFTER DARK</span></a>
-<a class="shot" href="https://www.rockstargames.com/VI/media" target="_blank" rel="noopener"><div class="placeholder">WILDLANDS</div><span><i class="tag">OFFICIAL MEDIA</i>WILD LEONIDA</span></a>
-</div><div class="actions"><a class="btn" href="https://www.rockstargames.com/VI/launch-gallery" target="_blank" rel="noopener">Open official launch gallery ↗</a><a class="btn" href="https://www.rockstargames.com/VI/media" target="_blank" rel="noopener">All screenshots & artwork ↗</a></div></section>
-<section id="map"><div class="section-head"><div><div class="kicker">02 / Field guide</div><h2>One state. Many worlds.</h2></div><p>A stylized fan-made overview of the regions named in official GTA VI material — not an in-game navigation map.</p></div>
-<div class="map-panel"><div class="map-art"><svg viewBox="0 0 650 360" role="img" aria-label="Stylized schematic map of Leonida"><defs><linearGradient id="land" x2="1" y2="1"><stop stop-color="#315d61"/><stop offset="1" stop-color="#24404c"/></linearGradient><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#8dd7d055" stroke-width=".7"/></pattern></defs><rect width="650" height="360" fill="#101d2a"/><path d="M80 35 L480 25 555 95 530 175 590 230 540 310 375 300 305 337 170 292 105 218 35 155Z" fill="url(#land)" stroke="#70c7c0" stroke-width="2"/><path d="M80 35 L480 25 555 95 530 175 590 230 540 310 375 300 305 337 170 292 105 218 35 155Z" fill="url(#grid)"/><path d="M95 210 Q230 170 350 200 T545 165" fill="none" stroke="#f5c878" stroke-width="2" stroke-dasharray="6 7"/><path d="M370 300 Q430 270 480 290 T555 315" fill="none" stroke="#55d9e8" stroke-width="3"/><g fill="#ff6b9f" stroke="#fff" stroke-width="1.5"><circle cx="420" cy="115" r="7"/><circle cx="210" cy="120" r="6"/><circle cx="300" cy="255" r="6"/><circle cx="115" cy="245" r="6"/><circle cx="500" cy="255" r="6"/><circle cx="520" cy="65" r="6"/></g><g fill="#f7f5ee" font-family="DM Sans" font-size="12" letter-spacing="1"><text x="435" y="108">VICE CITY</text><text x="160" y="104">PORT GELLHORN</text><text x="308" y="251">GRASSRIVERS</text><text x="70" y="270">AMBROSIA</text><text x="455" y="278">LEONIDA KEYS</text><text x="475" y="48">MOUNT KALAGA</text><text x="28" y="340" fill="#7e9aaa" font-size="9">SCHEMATIC / NOT TO SCALE</text></g></svg></div>
-<div class="map-info"><h3>THE LEONIDA FIELD GUIDE</h3><p>From the neon-lit streets of Vice City to the wetlands and island chains beyond, the state is built around contrasting landscapes.</p><div class="location-list"><div class="loc">Vice City</div><div class="loc">Leonida Keys</div><div class="loc">Port Gellhorn</div><div class="loc">Ambrosia</div><div class="loc">Grassrivers</div><div class="loc">Mount Kalaga</div></div></div></div></section>
-<section id="cars"><div class="section-head"><div><div class="kicker">03 / Motor culture</div><h2>Made for the long way.</h2></div><p>A small vehicle showcase inspired by official promotional material.</p></div>
-<div class="vehicle-grid">
-<article class="vehicle"><div class="car-art"><svg viewBox="0 0 360 150" aria-label="Stylized sports car illustration"><path d="M35 99 L55 76 110 66 151 32 246 34 290 72 326 84 333 108 25 108Z" fill="#e65d91" stroke="#ffd3e3" stroke-width="2"/><path d="M125 66L159 40 238 42 269 70Z" fill="#172332" stroke="#91dbe4" stroke-width="2"/><path d="M32 95H330" stroke="#f8b7d0" stroke-width="3"/><circle cx="91" cy="108" r="23" fill="#090d16" stroke="#aeb7c3" stroke-width="5"/><circle cx="270" cy="108" r="23" fill="#090d16" stroke="#aeb7c3" stroke-width="5"/></svg></div><div class="vehicle-info"><small>SPORT / CLASSIC</small><h3>’95 GROTTI CHEETAH</h3></div></article>
-<article class="vehicle"><div class="car-art"><svg viewBox="0 0 360 150" aria-label="Stylized classic sedan illustration"><path d="M35 96L60 73 112 67 145 43 248 44 286 73 325 85 332 108H27Z" fill="#d4a85f" stroke="#f8e2b9" stroke-width="2"/><path d="M121 68L151 49H242L269 71Z" fill="#1c2937" stroke="#a6d9e3" stroke-width="2"/><circle cx="91" cy="108" r="22" fill="#090d16" stroke="#c4c7ca" stroke-width="5"/><circle cx="270" cy="108" r="22" fill="#090d16" stroke="#c4c7ca" stroke-width="5"/></svg></div><div class="vehicle-info"><small>VINTAGE / SEDAN</small><h3>’55 VAPID STANIER</h3></div></article>
-<article class="vehicle"><div class="car-art"><svg viewBox="0 0 360 150" aria-label="Stylized off-road buggy illustration"><path d="M38 100L55 79 103 72 130 49 249 49 286 78 323 86 330 109H28Z" fill="#54b7b4" stroke="#b7eeee" stroke-width="2"/><path d="M121 75L145 55H242L270 77Z" fill="#192938" stroke="#a6d9e3" stroke-width="2"/><path d="M140 47L151 24 242 24 255 48" fill="none" stroke="#d3e5e4" stroke-width="5"/><circle cx="91" cy="109" r="23" fill="#090d16" stroke="#b7c4ca" stroke-width="5"/><circle cx="270" cy="109" r="23" fill="#090d16" stroke="#b7c4ca" stroke-width="5"/></svg></div><div class="vehicle-info"><small>OFF-ROAD / CONCEPT</small><h3>LEONIDA RUNNER</h3></div></article>
-</div></section>
-<section id="news"><div class="section-head"><div><div class="kicker">04 / News desk</div><h2>Latest transmissions.</h2></div><p>Updates below link directly to Rockstar's own announcements.</p></div>
-<div class="news-grid"><article class="news"><div><time>05 NOV 2026 · ROCKSTAR NEWSWIRE</time><h3>Explore the Grand Theft Auto VI Launch Gallery</h3><p>Rockstar has published a fresh collection of screenshots from Vice City and beyond.</p></div><a href="https://www.rockstargames.com/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery" target="_blank" rel="noopener">READ THE ANNOUNCEMENT ↗</a></article>
-<article class="news"><div><time>15 OCT 2026 · OFFICIAL VIDEO</time><h3>Grand Theft Auto VI Launch Trailer</h3><p>Watch the latest official trailer on Rockstar's website.</p></div><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">WATCH AT ROCKSTAR ↗</a></article>
-<article class="news"><div><time>GAME INFORMATION</time><h3>November 19, 2026</h3><p>Announced release date for PlayStation 5 and Xbox Series X|S.</p></div><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">OFFICIAL GAME PAGE ↗</a></article></div></section>
-<section><div class="soundbar"><div><h3>VICE CITY AFTER HOURS</h3><p>Ambient synth atmosphere · optional background sound</p></div><button class="switch" id="soundBtn" type="button">ENABLE AMBIENCE</button></div><div class="sound-note">Sound is off by default. Tap to enable; tap again to stop.</div><div class="actions"><button class="btn" id="notifyBtn" type="button">Enable release reminder</button><span class="sound-note" id="notifyStatus">Optional browser reminder · permission required</span></div></section>
+:root{color-scheme:dark;--bg:#100d19;--panel:#1a1526;--line:#382741;--pink:#ff70c8;--cyan:#69e7e4;--muted:#b7a9bd}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#55294e 0,#20152c 35%,var(--bg) 75%);color:#fff;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 16px env(safe-area-inset-bottom)}
+.wrap{max-width:560px;margin:0 auto;padding:24px 0 36px}.top{display:flex;justify-content:space-between;align-items:center;color:#f5c5e7;font-size:10px;letter-spacing:2px;font-weight:800}.live{border:1px solid #7d4b78;border-radius:99px;padding:7px 10px;color:#ff9bda;letter-spacing:1px}
+.hero{margin-top:18px;border:1px solid #75466f;border-radius:26px;padding:22px 17px 18px;background:linear-gradient(150deg,#38203e 0%,#171321 55%,#3d1c38 100%);box-shadow:0 18px 55px #0008;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:230px;height:230px;border:1px solid #ff8ed533;border-radius:50%;right:-100px;top:20px;box-shadow:0 0 0 22px #ff8ed50a,0 0 0 48px #ff8ed508}
+.brand{text-align:center;padding:24px 0 20px;position:relative}.eyebrow{font-size:10px;letter-spacing:4px;color:#e9b8dc}.brand h1{font-size:clamp(42px,12vw,66px);line-height:.95;margin:10px 0 9px;font-weight:950;letter-spacing:-3px;text-shadow:0 0 24px #ff70c877}.brand p{font-size:10px;letter-spacing:4px;color:#e8b4d8;margin:0}
+.timerbox{position:relative;text-align:center;border:1px solid #ffffff27;background:#090811a8;border-radius:20px;padding:17px 10px 15px}.label{font-size:10px;letter-spacing:2.5px;color:var(--pink);font-weight:800}.days{font-size:clamp(55px,16vw,78px);font-weight:900;letter-spacing:-4px;line-height:1.1;margin-top:8px;font-variant-numeric:tabular-nums;text-shadow:0 0 22px #ff70c866}.daylabel{font-size:9px;letter-spacing:3px;color:#e7c5df}.units{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.unit{background:#ffffff0b;border:1px solid #ffffff20;border-radius:13px;padding:11px 4px}.num{font-size:27px;font-weight:850;font-variant-numeric:tabular-nums}.unit small{display:block;font-size:9px;letter-spacing:2px;color:#e7b9dc;margin-top:2px}
+.datefoot{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#e8c5df;margin-top:15px;letter-spacing:1px}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.tab{background:#1a1526;border:1px solid var(--line);border-radius:13px;padding:12px 5px;color:#e6d8e9;font-size:12px;font-weight:750}.tab.active{background:var(--pink);color:#241126;border-color:var(--pink)}
+.page{display:none}.page.active{display:block}.card{background:linear-gradient(145deg,#211a2c,#171321);border:1px solid var(--line);border-radius:18px;padding:16px;margin:10px 0}.muted{color:var(--muted)}.kicker{font-size:10px;letter-spacing:2px;color:var(--pink);font-weight:800}.card h2{font-size:18px;margin:7px 0}.countline{font-size:clamp(21px,6vw,28px);font-weight:850;letter-spacing:-1px;font-variant-numeric:tabular-nums;margin-top:14px;overflow-wrap:anywhere}.bar{height:6px;border-radius:20px;background:#ffffff1c;overflow:hidden;margin-top:12px}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--pink),var(--cyan));width:0%}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#ffffff08;border:1px solid var(--line);border-radius:15px;padding:13px}.stat b{display:block;font-size:15px;margin-top:7px}.check{display:flex;align-items:center;gap:11px;padding:10px 0;font-size:13px;border-bottom:1px solid #ffffff12}.check:last-child{border:0}.check input{width:19px;height:19px;accent-color:var(--pink)}
+a{color:#ff9bda}.footer{text-align:center;color:#a995ad;font-size:10px;letter-spacing:1px;padding:22px 0 5px}.notice{font-size:11px;line-height:1.5;color:#c4b4c8}.badge{display:inline-block;border:1px solid #644461;border-radius:99px;padding:5px 8px;color:#f3b6dd;font-size:9px;letter-spacing:1px}
+@media(min-width:480px){.hero{padding:25px}.card{padding:19px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><span>ROCKSTAR COUNTDOWN PROJECT</span><span class="live">● LIVE</span></div>
+  <section class="hero">
+    <div class="brand"><div class="eyebrow">WELCOME TO</div><h1>VICE CITY</h1><p>THE WAIT IS ALMOST OVER</p></div>
+    <div class="timerbox">
+      <div class="label">TIME UNTIL GTA VI</div>
+      <div id="days" class="days">--</div><div class="daylabel">DAYS REMAINING</div>
+      <div class="units">
+        <div class="unit"><div id="hours" class="num">--</div><small>HOURS</small></div>
+        <div class="unit"><div id="minutes" class="num">--</div><small>MINUTES</small></div>
+        <div class="unit"><div id="seconds" class="num">--</div><small>SECONDS</small></div>
+      </div>
+    </div>
+    <div class="datefoot"><span>GRAND THEFT AUTO VI</span><span>19 NOV 2026</span></div>
+  </section>
+
+  <nav class="tabs" aria-label="App sections">
+    <button class="tab active" data-tab="overview">⌂ Overview</button>
+    <button class="tab" data-tab="preload">↓ Pre-load</button>
+    <button class="tab" data-tab="prep">✦ My setup</button>
+  </nav>
+
+  <section id="overview" class="page active">
+    <article class="card">
+      <div class="kicker">NEXT MILESTONE</div><h2>📥 Digital pre-load</h2>
+      <div class="muted" style="font-size:12px">10 November 2026 · 00:00 (your device's local time)</div>
+      <div class="countline" id="preloadShort">Calculating…</div>
+      <div class="notice" style="margin-top:9px">Pre-loading is available to eligible digital pre-orders. Check the official PlayStation instructions for your account and region.</div>
+    </article>
+    <div class="grid">
+      <div class="stat"><span class="muted" style="font-size:10px">PLATFORM</span><b>PlayStation 5</b></div>
+      <div class="stat"><span class="muted" style="font-size:10px">STORAGE TO RESERVE</span><b>At least 212 GB</b></div>
+    </div>
+    <article class="card">
+      <div class="kicker">THE COUNTDOWN JOURNEY</div>
+      <div class="muted" style="display:flex;justify-content:space-between;font-size:11px;margin-top:12px"><span>6 Nov 2026</span><span>Launch day</span></div>
+      <div class="bar"><span id="progress"></span></div>
+      <div id="percent" class="muted" style="font-size:11px;margin-top:8px">0% elapsed</div>
+    </article>
+  </section>
+
+  <section id="preload" class="page">
+    <article class="card">
+      <div class="kicker">MILESTONE 01</div><h2>PRE-LOAD DAY</h2>
+      <div class="muted" style="font-size:12px">10 November 2026 · Midnight local time</div>
+      <div class="countline" id="preloadFull">Calculating…</div>
+      <div class="bar"><span id="preprogress"></span></div>
+      <p class="notice">Official support currently lists digital pre-load from November 10 at midnight local time on PS5. Pre-order eligibility and availability may depend on your store region.</p>
+    </article>
+    <article class="card">
+      <div class="kicker">MILESTONE 02</div><h2>GAME UNLOCK</h2>
+      <div class="muted" style="font-size:12px">19 November 2026 · Midnight local time</div>
+      <div class="countline" id="launchFull">Calculating…</div>
+      <p class="notice">The exact unlock time can be region/store dependent. This timer uses midnight on November 19 in your device's current time zone.</p>
+    </article>
+  </section>
+
+  <section id="prep" class="page">
+    <article class="card">
+      <div class="kicker">YOUR GTA VI PREPARATION</div><h2>Ready for launch?</h2>
+      <p class="notice">Your checklist is saved on this device.</p>
+      <label class="check"><input type="checkbox" data-save="storage"> Reserve at least 212 GB of free space</label>
+      <label class="check"><input type="checkbox" data-save="order"> Confirm my pre-order and account region</label>
+      <label class="check"><input type="checkbox" data-save="network"> Check my internet connection</label>
+      <label class="check"><input type="checkbox" data-save="updates"> Enable automatic PS5 updates/downloads</label>
+      <label class="check"><input type="checkbox" data-save="controller"> Charge my controller</label>
+    </article>
+    <article class="card">
+      <div class="kicker">GAME INFORMATION</div>
+      <div class="grid" style="margin-top:12px">
+        <div class="stat"><span class="muted" style="font-size:10px">RELEASE</span><b>19 Nov 2026</b></div>
+        <div class="stat"><span class="muted" style="font-size:10px">PRE-LOAD</span><b>10 Nov 2026</b></div>
+        <div class="stat"><span class="muted" style="font-size:10px">CONSOLE</span><b>PS5 / PS5 Pro</b></div>
+        <div class="stat"><span class="muted" style="font-size:10px">SPACE</span><b>212 GB minimum</b></div>
+      </div>
+      <p class="notice" style="margin-top:13px">Dates and storage are based on currently published official information and may change.</p>
+      <p style="font-size:13px;margin-top:14px"><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">Rockstar Games — GTA VI ↗</a></p>
+      <p style="font-size:13px;margin-top:10px"><a href="https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions" target="_blank" rel="noopener">Rockstar support — pre-load details ↗</a></p>
+      <p style="font-size:13px;margin-top:10px"><a href="https://www.playstation.com/en-us/games/grand-theft-auto-vi/" target="_blank" rel="noopener">PlayStation — GTA VI ↗</a></p>
+    </article>
+  </section>
+  <footer class="footer">VICE CITY · COUNTING DOWN TO NOVEMBER 19<br><span class="badge" style="margin-top:10px">LIVE TIMER · LOCAL DEVICE TIME</span></footer>
 </main>
-<footer><span>VICE CITY FAN EXPERIENCE · NOT AFFILIATED WITH ROCKSTAR GAMES</span><span>All game imagery and trademarks belong to their respective owners.</span></footer><div class="toast" id="toast" role="status"></div>
 <script>
-const release=new Date('2026-11-19T00:00:00');
-function tick(){let d=Math.max(0,release-Date.now());for(const [id,val] of [['days',Math.floor(d/86400000)],['hours',Math.floor(d/3600000)%24],['mins',Math.floor(d/60000)%60],['secs',Math.floor(d/1000)%60]])document.getElementById(id).textContent=String(val).padStart(2,'0');}
-tick();setInterval(tick,1000);
-const toast=document.getElementById('toast');function say(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)}
-let audioCtx=null,osc1=null,osc2=null,gain=null;
-document.getElementById('soundBtn').addEventListener('click',()=>{const b=document.getElementById('soundBtn');if(audioCtx){gain.gain.setTargetAtTime(0,audioCtx.currentTime,.2);setTimeout(()=>{audioCtx.close();audioCtx=null},700);b.textContent='ENABLE AMBIENCE';return;}try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();gain=audioCtx.createGain();gain.gain.value=.035;gain.connect(audioCtx.destination);osc1=audioCtx.createOscillator();osc2=audioCtx.createOscillator();osc1.type='sine';osc2.type='triangle';osc1.frequency.value=110;osc2.frequency.value=164.81;let g2=audioCtx.createGain();g2.gain.value=.25;osc1.connect(gain);osc2.connect(g2);g2.connect(gain);osc1.start();osc2.start();b.textContent='DISABLE AMBIENCE';}catch(e){say('Audio is not available in this browser.')}});
-document.getElementById('notifyBtn').addEventListener('click',async()=>{const s=document.getElementById('notifyStatus');if(!('Notification'in window)){s.textContent='Notifications are not supported here.';return;}try{const p=await Notification.requestPermission();if(p==='granted'){s.textContent='Reminder enabled on this device.';if(!localStorage.getItem('vcReminder')){const ms=release.getTime()-Date.now()-86400000;if(ms>0)setTimeout(()=>new Notification('VICE CITY',{body:'Grand Theft Auto VI is scheduled to launch tomorrow.'}),Math.min(ms,2147480000));localStorage.setItem('vcReminder','1');}}else s.textContent='Permission was not granted.';}catch(e){s.textContent='Use the site in Safari and try again.';}});
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-</script></body></html>
+(() => {
+  const $ = id => document.getElementById(id);
+  // Uses the phone's local timezone, so the dates follow the device's region.
+  const preload = new Date(2026, 10, 10, 0, 0, 0);
+  const launch = new Date(2026, 10, 19, 0, 0, 0);
+  const journeyStart = new Date(2026, 10, 6, 0, 0, 0);
+  const pad = n => String(n).padStart(2, '0');
+  function format(ms) {
+    if (ms <= 0) return '00d · 00h · 00m · 00s';
+    let s = Math.floor(ms / 1000);
+    const d = Math.floor(s / 86400); s %= 86400;
+    const h = Math.floor(s / 3600); s %= 3600;
+    const m = Math.floor(s / 60); s %= 60;
+    return `${d}d · ${pad(h)}h · ${pad(m)}m · ${pad(s)}s`;
+  }
+  function update() {
+    const now = new Date();
+    let ms = Math.max(0, launch - now);
+    let s = Math.floor(ms / 1000), d = Math.floor(s / 86400); s %= 86400;
+    const h = Math.floor(s / 3600); s %= 3600;
+    const m = Math.floor(s / 60); s %= 60;
+    $('days').textContent = pad(d);
+    $('hours').textContent = pad(h);
+    $('minutes').textContent = pad(m);
+    $('seconds').textContent = pad(s);
+    $('preloadShort').textContent = format(preload - now);
+    $('preloadFull').textContent = format(preload - now);
+    $('launchFull').textContent = format(launch - now);
+    const pct = Math.max(0, Math.min(100, ((now - journeyStart) / (launch - journeyStart)) * 100));
+    $('progress').style.width = pct + '%';
+    $('percent').textContent = pct.toFixed(1) + '% of the countdown elapsed';
+    const pp = Math.max(0, Math.min(100, ((now - journeyStart) / (preload - journeyStart)) * 100));
+    $('preprogress').style.width = pp + '%';
+  }
+  document.querySelectorAll('[data-tab]').forEach(btn => btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === btn.dataset.tab));
+  }));
+  document.querySelectorAll('[data-save]').forEach(box => {
+    const key = 'vice-city-check-' + box.dataset.save;
+    box.checked = localStorage.getItem(key) === '1';
+    box.addEventListener('change', () => localStorage.setItem(key, box.checked ? '1' : '0'));
+  });
+  update(); setInterval(update, 1000);
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+  }
+})();
+</script>
+</body>
+</html>
