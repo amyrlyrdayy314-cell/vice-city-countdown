@@ -1,21 +1,9 @@
-VICE CITY — GTA VI Countdown (PWA)
-
-Files:
-- index.html: the app
-- manifest.webmanifest: install metadata
-- sw.js: offline cache
-- icon-192.png / icon-512.png: app icons
-
-Important:
-A Progressive Web App must be served over HTTPS (or localhost) to be installable on iPhone.
-The countdown uses midnight in the iPhone's current local timezone:
-- Pre-load: November 10, 2026
-- Launch: November 19, 2026
-
-To install on iPhone:
-1. Publish this folder to an HTTPS host (for example, a GitHub Pages site).
-2. Open the published address in Safari on iPhone.
-3. Tap Share > Add to Home Screen.
-4. Enable "Open as Web App" if shown, then tap Add.
-
-The countdown is local-device-time based. Official release/pre-load availability can vary by store region; confirm the latest details with Rockstar/PlayStation.
+VICE CITY — Complete fan experience update
+Upload and replace these files in the ROOT of your existing GitHub repository:
+- index.html
+- sw.js
+Keep your existing icon-192.png, icon-512.png and manifest.webmanifest.
+Commit changes. GitHub Pages will redeploy automatically.
+Features: responsive neon editorial layout, live countdown, schematic Leonida map, official Rockstar gallery links, vehicle cards, sourced news links, optional generated synth ambience, optional browser notification.
+Images: one official Rockstar screenshot is loaded remotely; other gallery tiles are designed visual links to Rockstar's official gallery to avoid redistributing copyrighted image files. Internet is required for remote images and external links.
+Map is fan-made schematic, not an accurate in-game map. This is an independent fan project and is not affiliated with Rockstar Games.
