@@ -24,6 +24,8 @@
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#ffffff08;border:1px solid var(--line);border-radius:15px;padding:13px}.stat b{display:block;font-size:15px;margin-top:7px}.check{display:flex;align-items:center;gap:11px;padding:10px 0;font-size:13px;border-bottom:1px solid #ffffff12}.check:last-child{border:0}.check input{width:19px;height:19px;accent-color:var(--pink)}
 a{color:#ff9bda}.footer{text-align:center;color:#a995ad;font-size:10px;letter-spacing:1px;padding:22px 0 5px}.notice{font-size:11px;line-height:1.5;color:#c4b4c8}.badge{display:inline-block;border:1px solid #644461;border-radius:99px;padding:5px 8px;color:#f3b6dd;font-size:9px;letter-spacing:1px}
 @media(min-width:480px){.hero{padding:25px}.card{padding:19px}}
+
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}.shot{display:block;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#0d0a14;text-decoration:none;color:#fff}.shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}.shot span{display:block;padding:9px 10px;font-size:11px;font-weight:750}.gallery-note{font-size:11px;line-height:1.55;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -47,6 +49,7 @@ a{color:#ff9bda}.footer{text-align:center;color:#a995ad;font-size:10px;letter-sp
     <button class="tab active" data-tab="overview">⌂ Overview</button>
     <button class="tab" data-tab="preload">↓ Pre-load</button>
     <button class="tab" data-tab="prep">✦ My setup</button>
+    <button class="tab" data-tab="gallery">▧ Gallery</button>
   </nav>
 
   <section id="overview" class="page active">
@@ -106,6 +109,20 @@ a{color:#ff9bda}.footer{text-align:center;color:#a995ad;font-size:10px;letter-sp
       <p style="font-size:13px;margin-top:14px"><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener">Rockstar Games — GTA VI ↗</a></p>
       <p style="font-size:13px;margin-top:10px"><a href="https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions" target="_blank" rel="noopener">Rockstar support — pre-load details ↗</a></p>
       <p style="font-size:13px;margin-top:10px"><a href="https://www.playstation.com/en-us/games/grand-theft-auto-vi/" target="_blank" rel="noopener">PlayStation — GTA VI ↗</a></p>
+    </article>
+  </section>
+
+  <section id="gallery" class="page">
+    <article class="card">
+      <div class="kicker">OFFICIAL ROCKSTAR MEDIA</div><h2>Vice City Gallery</h2>
+      <p class="gallery-note">Selected official screenshots from Rockstar Games. Tap any image to open the full-resolution original. Images are hosted by Rockstar; an internet connection is required.</p>
+      <div class="gallery-grid">
+        <a class="shot" href="https://www.rockstargames.com/VI/_next/static/media/Vice_City_13.0iq8ff474tsdx.jpg?akim=1&imdensity=1&imwidth=3840" target="_blank" rel="noopener"><img loading="lazy" src="https://www.rockstargames.com/VI/_next/static/media/Vice_City_13.0iq8ff474tsdx.jpg?akim=1&imdensity=1&imwidth=1200" alt="Official GTA VI Vice City screenshot"><span>VICE CITY · 13</span></a>
+        <a class="shot" href="https://www.rockstargames.com/VI/_next/static/media/Vice_City_14.0fu8u9jh5hkg7.jpg?akim=1&imdensity=1&imwidth=3840" target="_blank" rel="noopener"><img loading="lazy" src="https://www.rockstargames.com/VI/_next/static/media/Vice_City_14.0fu8u9jh5hkg7.jpg?akim=1&imdensity=1&imwidth=1200" alt="Official GTA VI Vice City screenshot"><span>VICE CITY · 14</span></a>
+        <a class="shot" href="https://www.rockstargames.com/VI/_next/static/media/Vice_City_15.11tb0mz68edqo.jpg?akim=1&imdensity=1&imwidth=3840" target="_blank" rel="noopener"><img loading="lazy" src="https://www.rockstargames.com/VI/_next/static/media/Vice_City_15.11tb0mz68edqo.jpg?akim=1&imdensity=1&imwidth=1200" alt="Official GTA VI Vice City screenshot"><span>VICE CITY · 15</span></a>
+        <a class="shot" href="https://www.rockstargames.com/VI/_next/static/media/Vice_City_16.16hjjmnxqg9mv.jpg?akim=1&imdensity=1&imwidth=3840" target="_blank" rel="noopener"><img loading="lazy" src="https://www.rockstargames.com/VI/_next/static/media/Vice_City_16.16hjjmnxqg9mv.jpg?akim=1&imdensity=1&imwidth=1200" alt="Official GTA VI Vice City screenshot"><span>VICE CITY · 16</span></a>
+      </div>
+      <p class="gallery-note" style="margin-top:14px">Browse the complete official collection on <a href="https://www.rockstargames.com/VI/media/screenshots" target="_blank" rel="noopener">Rockstar Games Screenshots ↗</a>.</p>
     </article>
   </section>
   <footer class="footer">VICE CITY · COUNTING DOWN TO NOVEMBER 19<br><span class="badge" style="margin-top:10px">LIVE TIMER · LOCAL DEVICE TIME</span></footer>
